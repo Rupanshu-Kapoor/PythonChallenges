@@ -29,12 +29,31 @@ Constraints:
 
 """
 
-class Solution:
-    def maxProduct(self, nums: list[int]) -> int:
 
+class Solution:
+    def maxProductSorting(self, nums: list[int]) -> int:
         nums.sort(reverse=True)
         return (nums[0] - 1) * (nums[1] - 1)
 
+    def maxProductSearching(self, nums:list[int]) -> int:
+        if len(nums) < 1:
+            return -1
+        if len(nums) == 2:
+            return (nums[0]-1) * (nums[1]-1)
+        else:
+            max1 = 0
+            max2 = 0
+
+            for i in range(len(nums)):
+                if nums[i] > max1:
+                    max1 = nums[i]
+                    maxInd = i
+            for j in range(len(nums)):
+                if nums[j] > max2 and j != maxInd:
+                    max2 = nums[j]
+            return (max1-1) * (max2-1)
+
 
 nums = list(map(int, input("Enter an array: ").split()))
-print(f"Product of two maximum number (i-1) and (j-1) is: {Solution().maxProduct(nums)}")
+print(f"Product of two maximum number sorting (i-1) and (j-1) is: {Solution().maxProductSorting(nums)}")
+print(f"Product of two maximum number searching (i-1) and (j-1) is: {Solution().maxProductSearching(nums)}")
