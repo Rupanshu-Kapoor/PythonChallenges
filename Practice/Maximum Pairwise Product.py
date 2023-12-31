@@ -29,8 +29,16 @@ Constraints:
 
 """
 
-
+import random
 class Solution:
+
+    def randomArrayGenerator(self, numbers: int, rand_range: int) -> list[int]:
+        random_array = []
+        for i in range(numbers):
+            rand_number = random.randrange(1,rand_range)
+            random_array.append(rand_number)
+        return random_array
+
     def maxProductSorting(self, nums: list[int]) -> int:
         nums.sort(reverse=True)
         return (nums[0] - 1) * (nums[1] - 1)
@@ -68,8 +76,29 @@ class Solution:
                     max2 = num
             return (max1-1)*(max2-1)
 
-nums = [10,2,5,2]
+
+test = random.randrange(10000,40000)
+print(test)
+
+for i in range(test):
+    n = random.randrange(2,10)
+    rand_range = random.randrange(2,100)
+
+    nums = Solution().randomArrayGenerator(n,rand_range)
+    print(nums)
 # nums = list(map(int, input("Enter an array: ").split()))
 # print(f"Product of two maximum number sorting (i-1) and (j-1) is: {Solution().maxProductSorting(nums)}")
-print(f"Product of two maximum number searching (i-1) and (j-1) is: {Solution().maxProductSearching(nums)}")
-print(f"Product of two maximum number searching2 (i-1) and (j-1) is: {Solution().maxProductSearching2(nums)}")
+# print(f"Product of two maximum number searching (i-1) and (j-1) is: {Solution().maxProductSearching(nums)}")
+# print(f"Product of two maximum number searching2 (i-1) and (j-1) is: {Solution().maxProductSearching2(nums)}")
+
+    res1 = Solution().maxProductSearching(nums)
+    res2 = Solution().maxProductSearching2(nums)
+    res3 = Solution().maxProductSorting(nums)
+
+    if res1 != res2 or res2 != res3:
+        print("Error: Result mismatch", f"Res1 = {res1}, Res2 = {res2}, Res3 = {res3}")
+        break
+
+    else:
+        print("Result Match")
+print(test)
