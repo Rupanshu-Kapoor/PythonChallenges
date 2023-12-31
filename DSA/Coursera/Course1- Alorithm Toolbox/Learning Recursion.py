@@ -19,6 +19,13 @@ def factoriaRecursion(n: int):
     # result
 
 
+# check if two approach has same results:
 
-print(factoriaRecursion(-1))
-print(factorial(-1))
+rand = randint(0, 1000)
+for i in range(rand):
+    if factorial(i) != factoriaRecursion(i):
+        print("Error: Result Mismatched at {}".format(i))
+        break
+    else:
+        print(f"factorial {i} is {factorial(i)} and factorial recursion is {factoriaRecursion(i)}")
+print(rand)
