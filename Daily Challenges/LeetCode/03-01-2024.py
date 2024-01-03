@@ -53,5 +53,25 @@ def numberOfBeams(bank: list[str])-> int:
         count1 = count2 = 0
     return result
 
+
+def numBeams(bank):
+
+    total = prev_row_count = 0
+
+    for row in bank:
+        cur_row_count = row.count("1")
+        if cur_row_count == 0:
+            continue
+
+        total += cur_row_count * prev_row_count
+        prev_row_count = cur_row_count
+
+    return total
+
+
+
+
 print(numberOfBeams(["011001","000000","010100","001000"]))
+print(numBeams(["011001","000000","010100","001000"]))
+numberOfBeams(["000","111","000"])
 numberOfBeams(["000","111","000"])
