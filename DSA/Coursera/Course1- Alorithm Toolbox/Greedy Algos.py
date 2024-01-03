@@ -43,4 +43,33 @@ def celebrationParty(children: list[int]):
     return group
 
 
-print(celebrationParty([5, 7, 11, 13, 9, 3, 28, 26, 23, 4]))
+def maxLoot(price, quantity, knapsack):
+
+    per_unit_price = [price[x]/quantity[x] for x in range(len(price))]
+    max_index = max_loot = 0
+    max_price = -1
+
+    while knapsack :
+
+        for i in range(len(per_unit_price)):
+            if per_unit_price[i] > max_price:
+                max_index = i
+        max_quantity = quantity[max_index]
+        max_price = per_unit_price[max_index]
+
+        if max_quantity < knapsack:
+            knapsack -= max_quantity
+            max_loot += price[max_index]
+        else:
+            max_loot += max_price * knapsack
+            knapsack = 0
+
+        per_unit_price.pop(max_index)
+        max_price = -1
+
+    return max_loot
+
+
+print(maxLoot([30,28,24],[5,4,3],9))
+# print(celebrationParty([5, 7, 11, 13, 9, 3, 28, 26, 23, 4]))
+
