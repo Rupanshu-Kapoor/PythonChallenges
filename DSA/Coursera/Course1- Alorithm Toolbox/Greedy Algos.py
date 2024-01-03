@@ -24,6 +24,23 @@ def minWaitingTime(patient: list[int], time: list[int]) -> int:
         waiting_time += tmin
     # subtracting last patient treatment time from total waiting time as we only need
     # the waiting time for last patient
-    return waiting_time-tmin
+    return waiting_time - tmin
 
-print(minWaitingTime([1,2,3,4,5], [10,15,7,13,3]))
+
+def celebrationParty(children: list[int]):
+    """
+    :param children: Age of Children
+    :return: Groups of children where in each group age difference between any two student is atlmost 2.
+    """
+    children.sort()
+    group = []
+    i = 0
+    while children:
+        n_group = [x for x in children if children[i] + 2 >= x]
+        group.append(n_group)
+        for j in n_group:
+            children.remove(j)
+    return group
+
+
+print(celebrationParty([5, 7, 11, 13, 9, 3, 28, 26, 23, 4]))
