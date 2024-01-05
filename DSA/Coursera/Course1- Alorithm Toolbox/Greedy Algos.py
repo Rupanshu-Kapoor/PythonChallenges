@@ -49,7 +49,7 @@ def maxLoot(price, quantity, knapsack):
     max_index = max_loot = 0
     max_price = -1
 
-    while knapsack :
+    while knapsack:
 
         for i in range(len(per_unit_price)):
             if per_unit_price[i] > max_price:

@@ -5,6 +5,8 @@ slab2 : between 2.5 and 5 lakhs : 5% tax
 slab3 : between 5 and 10 lakhs : 20% tax
 slab4 : above 10 lakhs : 30% tax
 """
+
+
 def calTax(income: float) -> float:
     temp = income
     total_tax = 0
