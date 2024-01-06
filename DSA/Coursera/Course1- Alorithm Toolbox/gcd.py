@@ -9,10 +9,11 @@ def naiveGCD(a: int, b: int) -> int:
     :param a:
     :param b:
     :return: GCD of a and b
+    time complexity: O(min a and b) = O(n)
     """
     best = 0
-    small = min(a,b)
-    for i in range(1, small+1):
+    small = min(a, b)
+    for i in range(1, small + 1):
         if a % i == 0 and b % i == 0:
             best = i
 
@@ -27,6 +28,7 @@ def euclidGCD(a: int, b: int) -> int:
     :param a:
     :param b:
     :return: CGD of a,b in a fast approach
+    time complexity : O(log phi (min of a,b)) = O(log phi(n))
     """
     if b == 0:
         return a
@@ -35,6 +37,5 @@ def euclidGCD(a: int, b: int) -> int:
         return euclidGCD(b, rem)
 
 
-print(naiveGCD(3577,2343))
-print(euclidGCD(234,3577))
-
+print(naiveGCD(3577, 2343))
+print(euclidGCD(234, 3577))
