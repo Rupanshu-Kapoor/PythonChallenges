@@ -19,9 +19,9 @@ def getStarPattern(n: int) -> None:
 
     for i in range(n):
         if i == 0 or i == n-1:
-            string = n*"*"
+            string = n*"* "
         else:
-            string = "*" + (n-2)*" "+"*"
+            string = "* " + (n-2)*"  "+"*"
         print(string)
 
 

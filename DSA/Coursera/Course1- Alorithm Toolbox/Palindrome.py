@@ -1,5 +1,12 @@
 from testing import stressTest
 
+def palindrome(str, i , j):
+    if i >= j:
+        return True
+    if str[i] != str[j]:
+        return False
+    return palindrome(str, i+1, j-1)
+
 
 
 def palindromeFinder(string: str) -> bool:
@@ -12,7 +19,7 @@ def palindromeFinder(string: str) -> bool:
         return False
 
 
-string1 = "rotoR"
+string1 = "rotor"
 string2 = "rater"
-print(string1[1:-1])
 print(palindromeFinder(string1))
+print(palindrome(string1,0,len(string1)-1))
