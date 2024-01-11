@@ -51,7 +51,7 @@ def getSecondOrderElements(n: int, a: [int]) -> [int]:
         if i != a[0]:
             second_largest = i
             break
-    for i in range(n-1, -1, -1):
+    for i in range(n - 1, -1, -1):
         if a[i] != a[-1]:
             second_smallest = a[i]
             break
@@ -72,7 +72,7 @@ def getSecondOrderElements2(n: int, a: [int]) -> [int]:
     for i in range(1, n):
         if a[i] > largest:
             largest = a[i]
-    for i in range(1,n):
+    for i in range(1, n):
         if a[i] < smallest:
             smallest = a[i]
     for i in a:
@@ -100,20 +100,20 @@ def getSecondOrderElements3(n: int, a: [int]) -> [int]:
         if i > largest:
             second_largest = largest
             largest = i
-        elif i > second_largest:
+        elif i > second_largest and i != largest:
             second_largest = i
-        if i < smallest:
+        if i < smallest :
             second_smallest = smallest
             smallest = i
-        elif i < second_smallest:
-            second_largest = i
-
-    print(largest,smallest)
+        elif i < second_smallest and i != smallest:
+            second_smallest = i
 
     return [second_largest, second_smallest]
 
 
-
-n = 5
-a = [1, 2, 3, 4, 5]
+n = 10
+# a = [1, 2, 3, 4, 5]
+a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(getSecondOrderElements(n, a))
+print(getSecondOrderElements2(n, a))
 print(getSecondOrderElements3(n, a))
