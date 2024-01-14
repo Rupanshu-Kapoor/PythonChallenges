@@ -45,8 +45,8 @@ import math
 
 num = int(input())
 # num = 103
-temp = num
 power = int(math.log(num,10)+1)
+temp = num
 arm_num = 0
 
 while temp > 0:

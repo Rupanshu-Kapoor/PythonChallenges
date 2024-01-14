@@ -58,6 +58,7 @@ class Solution:
         optimised approach: gather all the unique values of array in the first "i" index
         :param arr: array of numbers
         :return: index of last unique element in the array
+        :TC = O(n):
         """
         i = j = 0
         for j in range(1, len(arr)):

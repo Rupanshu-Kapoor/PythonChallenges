@@ -64,4 +64,7 @@ class Solution:
 
 
 obj = Solution()
-print(obj.check(nums=[3, 4, 5, 1, 2]))
+# print(obj.check(nums=[3, 4, 5, 1, 2]))
+ar = [1,2,3,4,5,6,7]
+# ar = [-1, -100, 3 ,99]
+print(obj.rightShift(ar,3))
