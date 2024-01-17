@@ -94,8 +94,8 @@ def rotateArrayRight2(nums: [int], shifter: int) -> None:
 a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(a)
 # rotateArrayRight2(a, 2)
-rotateArrayLeft2(a, 2)
-rotateArrayLeft(a,2)
+# rotateArrayLeft2(a, 2)
+rotateArrayRight2(a,2)
 print(a)
 
 

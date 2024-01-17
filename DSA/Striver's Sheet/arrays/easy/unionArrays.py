@@ -83,14 +83,13 @@ def sortedArray1(a: [int], b: [int]) -> [int]:
     for i in range(len(b)):
         if b[i] not in sorted_array:
             sorted_array.append(b[i])
-    print(sorted_array)
     return sorted_array
 
 
 def sortedArray2(a: [int], b: [int]) -> [int]:
     """
     :TC: O(m+n) O(log(m+n))
-    inserting elements in dictionary take nlogn
+    inserting elements in dictionary take logn
     and there can be n+m unique elements in the worst case.
     Hence, inserting elements in the union list will take O(m+n)
     :param a:
@@ -143,6 +142,7 @@ def sortedArrayOP(a: [int], b: [int]) -> [int]:
 
 a1 = [1, 2, 3, 4, 5, 6]
 b1 = [2, 3, 5]
-# print(sortedArray1(a1, b1))
+print(sortedArrayBF(a1, b1))
+print(sortedArray1(a1, b1))
+print(sortedArray2(a1, b1))
 print(sortedArrayOP(a1, b1))
-# sortedArrayOP(a1,b1)
