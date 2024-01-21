@@ -26,8 +26,9 @@ class Fibonacci:
 
 
 dic = {}
-num = 1000
+num = 9
 obj = Fibonacci()
 print(obj.fabonacciGenerator(num)[-1])
 # print(obj.fabonacci(4))
 print(obj.improvedFabonacci(dic, num))
+
