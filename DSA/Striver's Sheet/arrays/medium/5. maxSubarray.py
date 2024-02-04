@@ -54,5 +54,5 @@ def maxSubarray(arr: [int]) -> int:
     return max_sum
 
 
-a = [-3, -5, -6, 6, 4, 2, 52, 5]
+a = [-2, 1, -3, 4, -1, 2, 1, -15, 4]
 print(maxSubarray(a))

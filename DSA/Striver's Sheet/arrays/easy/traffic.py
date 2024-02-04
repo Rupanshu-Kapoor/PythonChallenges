@@ -54,8 +54,6 @@ def findMaxConsecutiveOnes(nums: list[int]) -> int:
 
 
 def traffic(n: int, m: int, vehicle: [int]) -> int:
-    # Write your code here.
-    pass
     worst_scenario = 0
     for i in range(n-m+1):
 
